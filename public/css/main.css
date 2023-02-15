@@ -26,8 +26,8 @@ ul{
     list-style: none;
 }
 a{
-    font-size: 16px;
-    font-weight: 900;
+    font-size: 12px;
+    font-weight: 100;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
@@ -35,24 +35,24 @@ a{
 }
 p{
     font-size: 17px;
-    font-weight: 900;
+    font-weight: 200;
     letter-spacing: 1px;
 }
 h1{
-    font-size: clamp( 35px, 7vw, 7vh);
-    font-weight: 900;
+    font-size: clamp( 35px, 6.5vw, 6.5vh);
+    font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 h2{
-    font-size: clamp( 25px, 5vw, 5vh);
-    font-weight: 900;
+    font-size: clamp( 25px, 4.5vw, 4.5vh);
+    font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 h3{
-    font-size: clamp( 18px, 2.5vw, 2.5vh);
-    font-weight: 900;
+    font-size: clamp( 18px, 2vw, 2vh);
+    font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -61,6 +61,12 @@ h4{
     font-weight: 900;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+span{
+    color: var(--color-violet);
+}
+h1 span{
+    -webkit-text-stroke: .4px #fff;
 }
 
 /* 
@@ -71,6 +77,7 @@ h4{
 
 .logo{
     width: 150px;
+    margin-left: -45px;
 }
 path{
     fill: #000;
@@ -110,7 +117,7 @@ header{
 }
 .navbar-desktop .menu-list a:hover{
     color: #fff;
-    background: rgb(9, 4, 89);
+    background: var(--color-violet);
 }
 
 /* 
@@ -131,14 +138,24 @@ header{
 .menu-listm{
     display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center; 
-    gap: 20px;
-    transform: translateY(-300px);
-    transition: .5s all;
+    position: absolute;
+    gap: 15px;
+    transform: translateY(-400px);
+    transition: .5s all ease-in-out;
+    width: 100%;
 }
 .menu-active{
-    transform: translateY(0px);
+    transform: translateY(-4vh);
+    height: 200px;
+    background: #fff;
+    z-index: 9;
 }
+
+/* .header-nav{
+    height: 320px;
+} */
 
 @media screen and (max-width: 800px) {
     .navbar-desktop{
@@ -190,7 +207,7 @@ header{
     flex-direction: column;
 }
 button{
-    background: var(--color-medium-blue);
+    background: var(--color-violet);
     color: #fff;
     font-size: 20px;
     width: 150px;
@@ -201,8 +218,8 @@ button{
 }
 button:hover{
     background: #fff;
-    color: var(--color-medium-blue);
-    border: 2px solid #000;
+    color: var(--color-violet);
+    border: 2px solid var(--color-violet);
 }
 
 @media screen and (max-width: 1025px) {
@@ -223,7 +240,7 @@ button:hover{
 .about-company{
     width: 100%;
     height: auto;
-    padding: 4rem 0;
+    padding: 100px 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, 500px);
     justify-content: space-evenly;
@@ -263,7 +280,7 @@ button:hover{
     line-height: 25px;
 }
 .info-text h2 span{
-    color: var(--color-medium-blue);
+    color: var(--color-violet);
 }
 .about-icons{
     width: 100%;
@@ -348,7 +365,7 @@ button:hover{
     gap: 15px;
 }
 .card button{
-    background: var(--color-medium-blue);
+    background: var(--color-violet);
     color: #fff;
     font-size: 20px;
     width: 150px;
@@ -359,8 +376,8 @@ button:hover{
 }
 .card button:hover{
     background: #fff;
-    color: var(--color-medium-blue);
-    border: 2px solid #000;
+    color: var(--color-violet);
+    border: 2px solid #8a7ff9;
 }
 
 
@@ -397,6 +414,7 @@ button:hover{
 .latest-grid-2{
     grid-template-columns: repeat(auto-fill, 22vw);
 }
+
 
 @media screen and (max-width: 900px) {
     .latest-grid-1{
@@ -461,7 +479,7 @@ button:hover{
 
 }
 .team-header{
-    background: var(--color-medium-blue);
+    background: var(--color-violet);
     color: #fff;
     text-align: center;
     width: 100%;
@@ -477,6 +495,7 @@ button:hover{
     transition: .3s all;
 }
 .team-img:hover img{
+    cursor: pointer;
     scale: 1.15;
     transform: rotate(-10deg);
 }
@@ -500,7 +519,7 @@ button:hover{
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 50px;
+    row-gap: 20px;
     background: #000;
     color: #fff;
 }
@@ -515,15 +534,20 @@ button:hover{
     height: 90%;
     gap: 20px;
 }
-.contact-text h1{
+.contact-text h2{
     font-size: clamp(25px, 6vw, 6vh);
     line-height: 25px;
 }
-.contact-text h1 span{
+.contact-text h2 span{
     font-size: clamp(16px, 2.5vw, 2.5vh);
     vertical-align: middle;
 }
-
+.contact-abt .contact-text button{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -541,7 +565,13 @@ button:hover{
 }
 .footer a{
     text-transform: capitalize;
+    font-weight: 700;
 }
-.footer a span{
-    color: var(--color-medium-blue);
+
+@media screen and (max-width: 720px) {
+    .footer{
+        flex-direction: column;
+        row-gap: 5px;
+        text-align: center;
+    }
 }
