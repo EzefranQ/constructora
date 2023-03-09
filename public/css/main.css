@@ -5,11 +5,14 @@
 }
 @font-face {
     font-family: 'Helvetica neue';
-    src: url(/public/font/Helvetica-neue.otf);
+    src: url(../font/Helvetica-neue.otf);
     font-display: swap;
 } 
 body{
     font-family: var(--helvetica-font); 
+}
+html{
+    scroll-behavior: smooth;
 }
 :root{
     --helvetica-font: 'Helvetica neue';
@@ -180,7 +183,7 @@ header{
 .slider{
     width: 100%;
     height: 700px;
-    background: url(/public/img/slider/home\ \(3\).webp);
+    background: url(../img/slider/slider1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
@@ -247,9 +250,9 @@ button:hover{
     gap: 10px;
 }
 
-
+.contact-img,
 .img-company{
-    background-image: url(/public/img/slider/home\ \(3\).webp);
+    background-image: url(../img/slider/slider3.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -357,12 +360,20 @@ button:hover{
     height: auto;
     width: 100%;
 }
+.card-img{
+    height: 220px;
+
+}
 .card-text{
     padding: 1.5rem 8px 2rem 8px;
+    gap: 15px;
+}
+.txt{
+    height: 200px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 .card button{
     background: var(--color-violet);
@@ -373,6 +384,7 @@ button:hover{
     cursor: pointer;
     transition: .3s all;
     border: 2px solid transparent;
+    margin-top: 50px;
 }
 .card button:hover{
     background: #fff;
@@ -380,7 +392,11 @@ button:hover{
     border: 2px solid #8a7ff9;
 }
 
-
+@media screen and (max-width: 1200px) {
+    .card button{
+        margin-top: 100px;
+    }
+}
 
 /* 
 ===================
@@ -412,7 +428,15 @@ button:hover{
     grid-template-columns: repeat(auto-fill, 31vw);
 }
 .latest-grid-2{
-    grid-template-columns: repeat(auto-fill, 22vw);
+    grid-template-columns: repeat(auto-fit, 22vw);
+}
+.latest-img{
+    height: 250px;
+    border: 2px double rgb(138, 127, 249, .2);
+    animation: border infinite backwards 2s;
+}
+.latest-img img{
+    object-fit: auto;
 }
 
 
@@ -444,7 +468,7 @@ button:hover{
 ===================
 */
 
-
+/* 
 .our-team{
     height: 100%;
     width: 100%;
@@ -498,7 +522,7 @@ button:hover{
     cursor: pointer;
     scale: 1.15;
     transform: rotate(-10deg);
-}
+} */
 
 
 
@@ -509,6 +533,13 @@ button:hover{
 ===================
 */
 
+
+.contact-img{
+    background: url(../img/trabajadores3-min.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .contact-us{
     width: 100%;
@@ -536,7 +567,9 @@ button:hover{
 }
 .contact-text h2{
     font-size: clamp(25px, 6vw, 6vh);
-    line-height: 25px;
+}
+.contact-text h2 span{
+    display: block;
 }
 .contact-text h2 span{
     font-size: clamp(16px, 2.5vw, 2.5vh);
